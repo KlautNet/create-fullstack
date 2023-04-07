@@ -1,11 +1,11 @@
 <h1  align="center">
-Create Fullstack App
+Create Next Fullstack App
 </h1>
 <p  align="center">
 The fastest way to create a Fullstack App
 </p>
 
-`npx create-fullstack-app <project-name>`
+`npx create-next-fullstack <project-name>`
 
 ## Usage
-- `npx create-fullstack-app` Creates a Fullstack app using Typescript, Typeorm, Graphql, Apollo and Nextjs
+- `npx create-next-fullstack` Creates a Fullstack app using Typescript, Typeorm, Graphql, Apollo and Nextjs
