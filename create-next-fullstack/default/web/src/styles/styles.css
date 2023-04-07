@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background-color: rgb(21, 22, 22);
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.code {
+  background-color: rgb(38, 38, 43);
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 20px;
+  height: fit-content;
+}
