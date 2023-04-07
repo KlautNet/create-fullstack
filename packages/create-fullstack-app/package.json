@@ -1,5 +1,5 @@
 {
-    "name": "create-fullstack",
+    "name": "create-fullstack-app",
     "description": "Set up a Fullstack Typescript, GraphQL, Typeorm and Nextjs project by running one command.",
     "author": "jayke",
     "repository": {
@@ -18,7 +18,7 @@
       "src/index.js"
     ],
     "bin": {
-      "create-fullstack": "./src/index.js"
+      "create-fullstack-app": "./src/index.js"
     },
     "dependencies": {
       "chalk": "^3.0.0",
