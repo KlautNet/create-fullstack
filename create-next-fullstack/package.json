@@ -3,26 +3,33 @@
     "description": "Set up a Fullstack Typescript, GraphQL, Typeorm and Nextjs project by running one command.",
     "author": "jayke",
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/KlautNet/create-fullstack.git"
+        "type": "git",
+        "url": "git+https://github.com/KlautNet/create-fullstack.git"
     },
     "bugs": {
-      "url": "https://github.com/KlautNet/create-fullstack/issues"
+        "url": "https://github.com/KlautNet/create-fullstack/issues"
     },
     "homepage": "https://github.com/KlautNet/create-fullstack#readme.md",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": "MIT",
     "files": [
-      "chakra",
-      "default",
-      "src/index.js"
+        "chakra",
+        "default",
+        "src/index.js"
+    ],
+    "keywords": [
+      "fullstack",
+      "next",
+      "create",
+      "graphql",
+      "typeorm"
     ],
     "bin": {
-      "create-next-fullstack": "./src/index.js"
+        "create-next-fullstack": "./src/index.js"
     },
     "dependencies": {
-      "chalk": "^3.0.0",
-      "commander": "^4.0.1",
-      "fs-extra": "^8.1.0"
+        "chalk": "^3.0.0",
+        "commander": "^4.0.1",
+        "fs-extra": "^8.1.0"
     }
-  }
+}
