@@ -18,11 +18,11 @@
         "src/index.js"
     ],
     "keywords": [
-      "fullstack",
-      "next",
-      "create",
-      "graphql",
-      "typeorm"
+        "fullstack",
+        "next",
+        "create",
+        "graphql",
+        "typeorm"
     ],
     "bin": {
         "create-next-fullstack": "./src/index.js"
@@ -30,6 +30,7 @@
     "dependencies": {
         "chalk": "^3.0.0",
         "commander": "^4.0.1",
-        "fs-extra": "^8.1.0"
+        "fs-extra": "^8.1.0",
+        "prompts": "^2.4.2"
     }
 }
