@@ -10,7 +10,7 @@
         "url": "https://github.com/KlautNet/create-fullstack/issues"
     },
     "homepage": "https://github.com/KlautNet/create-fullstack#readme.md",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "MIT",
     "files": [
         "chakra",
