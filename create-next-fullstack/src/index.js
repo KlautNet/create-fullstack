@@ -20,10 +20,19 @@ const setup = [
     message: "Install packages automatically?",
     initial: true,
   },
+  {
+    type: "select",
+    name: "database",
+    message: "Which database should be configured?",
+    choices: [
+      { title: "PostgreSQL", value: "postgres" },
+      { title: "MySQL / MariaDB", value: "mysql" },
+      { title: "MongoDB (experimental)", value: "mongodb" },
+    ],
+  },
 ];
 
-let projectName;
-let autoInstall;
+let projectName, autoInstall, database;
 let startTime = Date.now();
 
 /*
@@ -41,6 +50,7 @@ const program = new commander.Command(packageJson.name)
       }
       projectName = answer.projectName;
       autoInstall = answer.autoInstall;
+      database = answer.database;
       createProject();
     });
   })
@@ -54,6 +64,12 @@ const useYarn = () => {
     return false;
   }
 };
+
+function appendDependency(packageName, packageVersion) {
+  const packageJson = JSON.parse(fs.readFileSync("./package.json"));
+  packageJson.dependencies[packageName] = packageVersion;
+  fs.writeFileSync("./package.json", JSON.stringify(packageJson, null, 2));
+}
 
 const createProject = () => {
   const projectDestination = path.join(process.cwd(), projectName);
@@ -84,15 +100,47 @@ const createProject = () => {
    dist`
   );
 
+  fs.writeFileSync(
+    "src/data-source.ts",
+    `
+import { DataSource } from "typeorm";
+import { Example } from "./entities/Example";
+
+export const AppDataSource = new DataSource({
+    type: "${database}",
+    host: "localhost",
+    port: 5432,
+    username: "test",
+    password: "test",
+    database: "test",
+    synchronize: true,
+    logging: true,
+    entities: [Example],
+    subscribers: [],
+    migrations: [],
+})`
+  );
+
+  switch (database) {
+    case "mongodb":
+      appendDependency("mongodb", "^3.6.0");
+      break;
+    case "postgres":
+      appendDependency("pg", "^8.10.0");
+      break;
+    case "mysql":
+      appendDependency("mysql", "^2.18.1");
+  }
+
   if (autoInstall) {
     console.log(chalk.green("Installing server dependencies..."));
     if (yarn) {
-      execSync("yarn install", {
+      execSync(`yarn install`, {
         //stdio: ["pipe", "pipe", process.stderr]
         stdio: ["pipe"],
       });
     } else {
-      execSync("npm install", {
+      execSync(`npm install`, {
         //stdio: ["pipe", "pipe", process.stderr]
         stdio: ["pipe"],
       });

@@ -45,6 +45,8 @@ You can then start developing your project by navigating to the newly created di
 
 - Multiple templates to choose from (*Planned*)
 
+- Select your preffered database (PostgreSQL, MySQL / MariaDB or MongoDB)
+
 - Fullstack project structure with Next.js and TypeORM
 
 - TypeScript ready

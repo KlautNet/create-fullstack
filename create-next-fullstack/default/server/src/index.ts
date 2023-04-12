@@ -11,7 +11,7 @@ const main = async() => {
     .then(() => {
         console.log("Connected to database")
     }).catch((_) => {
-        console.log(`Error while connecting to database`)
+        console.log(`Error while connecting to database. Please change the Credentials!`)
     })
 
     const app = express();
